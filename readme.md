@@ -1,4 +1,4 @@
-# L1 - 06: 2D Object Tracking with OpenCV and Deep Learning
+# 2D Object Tracking with OpenCV and Deep Learning
 
 <img src="./goturn.jpg" width="520" style="border:0px solid #FFFFFF; padding:1px; margin:1px">
 
@@ -32,8 +32,6 @@ Please follow these steps to contribute:
 - Push your branch to your forked repository and create a pull request to the main repository.
 - Wait for your pull request to be reviewed and merged.
 
-## References
 
-- [Caffe DNN pre-trained model and defaults parameters](https://github.com/opencv/opencv/tree/4.x/samples/dnn)
 
 
