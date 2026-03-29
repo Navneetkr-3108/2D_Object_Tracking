@@ -1,33 +1,103 @@
-# 2D Object Tracking with OpenCV and Deep Learning
+# Multi-Object Tracking using Deep SORT
 
 <img src="./goturn.jpg" width="520" style="border:0px solid #FFFFFF; padding:1px; margin:1px">
 
+
+
 ## Overview
 
-This is a set of Object Tracking projects using OpenCV and deep learning frameworks such as tensorflow, pytorch, caffe, ...
+This project implements a real-time multi-object tracking system using the Deep SORT (Simple Online and Realtime Tracking with a Deep Association Metric) algorithm. The system detects multiple objects in a video and maintains their identities across frames by combining motion prediction and deep learning-based appearance features. It is designed to handle challenges such as occlusion, overlapping objects, and dynamic motion, making it suitable for real-world computer vision applications.
 
-## Object Tracking Pipeline (OpenCV) 
+---
 
-1. BOOSTING
-2. MIL 
-3. KCF 
-4. CRST
-5. TLD: Tends to recover from occulusions
-6. MEDIANFLOW: Good for predictable slow motion
-7. **GOTURN**: deep learning-based
-- Most Accurate 
-8. MOSSE
-- Fastest
+## Features
 
+* Real-time multi-object tracking
+* Unique ID assignment for each object
+* Robust tracking under occlusion and crowd scenarios
+* Combination of motion (Kalman Filter) and appearance (deep features)
+* Efficient object association using the Hungarian Algorithm
 
-## Contributing
+---
 
-If you want to contribute to this project, you are welcome to do so. You can either add new projects, improve existing ones, or fix bugs and errors. 
+## How It Works
 
-Please follow these steps to contribute:
+The system first detects objects in each frame using a pre-trained detection model. These detections are then passed to the Deep SORT tracker, which predicts object positions using a Kalman filter and extracts deep appearance features using a neural network. The tracker matches detected objects with existing tracks using a combination of motion and appearance similarity, ensuring consistent identity assignment across frames.
 
-- Fork this repository and clone it to your local machine.
-- Create a new branch with a descriptive name for your contribution.
-- Add your code and files to the branch and commit your changes.
-- Push your branch to your forked repository and create a pull request to the main repository.
-- Wait for your pull request to be reviewed and merged.
+---
+
+## Requirements
+
+Make sure you have the following installed:
+
+* Python 3.7 or higher
+* OpenCV
+* NumPy
+* TensorFlow or PyTorch (depending on implementation)
+* Deep SORT dependencies
+
+Install required libraries using:
+
+```bash
+pip install opencv-python numpy
+```
+
+(Install additional dependencies as required by your notebook.)
+
+---
+
+## How to Run the Project
+
+1. Clone the repository or download the project files.
+
+2. Navigate to the project directory.
+
+3. Open the notebook:
+
+```bash
+jupyter notebook object-tracking-deep-sort.ipynb
+```
+
+4. Run all cells in sequence.
+
+5. Provide input:
+
+   * Use a video file or
+   * Enable webcam input
+
+6. The output will display tracked objects with bounding boxes and unique IDs in real time.
+
+---
+
+## Project Structure
+
+* `object-tracking-deep-sort.ipynb` → Main implementation file
+* `Object_Tracking.ipynb` → Basic tracking methods (reference)
+* `readme.md` → Project documentation
+
+---
+
+## Applications
+
+* Surveillance and security systems
+* Traffic monitoring
+* Autonomous driving
+* Crowd analysis
+* Sports analytics
+
+---
+
+## Future Improvements
+
+* Integration with advanced detectors like YOLOv8
+* Multi-camera tracking
+* GPU optimization for faster processing
+* Deployment as a web-based application
+
+---
+
+## Conclusion
+
+This project demonstrates an effective approach to multi-object tracking by combining traditional motion models with deep learning-based appearance features. The Deep SORT algorithm significantly improves tracking accuracy and identity consistency, making it suitable for complex and real-time scenarios.
+
+---
